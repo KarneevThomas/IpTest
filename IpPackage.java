@@ -87,3 +87,11 @@ public class IpPackage
         return this.adresseReseau().octet1 == ipPackage.adresseReseau().octet1 && this.adresseReseau().octet2 == ipPackage.adresseReseau().octet2 && this.adresseReseau().octet3 == ipPackage.adresseReseau().octet3;
     }
 }
+
+private int octet1;
+private int octet2;
+private int octet3;
+private int octet4;
+
+
+
