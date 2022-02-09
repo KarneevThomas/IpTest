@@ -88,10 +88,5 @@ public class IpPackage
     }
 }
 
-private int octet1;
-private int octet2;
-private int octet3;
-private int octet4;
-
 
 
