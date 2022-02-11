@@ -1,41 +1,35 @@
 package IpPackage;
 
-public class IpPackage
-{
-    private int octet1;
-    private int octet2;
-    private int octet3;
-    private int octet4;
-    
-    private IpPackage(final int octet1, final int octet2, final int octet3, final int octet4) {
-        this.octet1 = octet1;
-        this.octet2 = octet2;
-        this.octet3 = octet3;
-        this.octet4 = octet4;
+private IpPackage(int o1,int o2,int o3,int o4) {
+        this.octet1 = o1;
+        this.octet2 = o2;
+        this.octet3 = o3;
+        this.octet4 = o4;
     }
-    
-    public void test() {
-        System.out.println("Hello World Package OK ? ");
-    }
-    
-    public static IpPackage getInstance(final int i, final int j, final int k, final int l) {
-        try {
-            if (i < 0 || i > 255 || j < 0 || j > 255 || k < 0 || k > 255 || l < 0 || l > 255) {
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
+
+    // Méthode static car méthode accessible en dehors de toute instanciation
+    public static IpPackage getInstance(int o1, int o2,int o3,int o4) {
+        try 
+        {
+            if (o1 < 0 || o1 > 255 || o2 < 0 || o2 > 255 || o3 < 0 || o3 > 255 || o4 < 0 || o4 > 255)
+            {
                 throw new Exception();
             }
         }
-        catch (Exception ex) {
+        catch (Exception e)
+        {
             System.out.println("Valeur impossible \n");
+            // return null;
         }
-        System.out.println("o1 = " + i);
-        System.out.println("o2 = " + j);
-        System.out.println("o3 = " + k);
-        System.out.println("o4 = " + l);
-        return new IpPackage(i, j, k, l);
-    }
-    
-    public String ToString() {
-        return "o1 = " + this.octet1 + " o2 = " + this.octet2 + " o3 = " + this.octet3 + " o4 = " + this.octet4;
+        
+        System.out.println("o1 = " + o1);        
+        System.out.println("o2 = " + o2);        
+        System.out.println("o3 = " + o3);
+        System.out.println("o4 = " + o4);                
+
+        return new IpPackage(o1,o2,o3,o4);
     }
     
     public int getOctet1() {
@@ -86,7 +80,15 @@ public class IpPackage
     public Boolean estMemeReseau(final IpPackage ipPackage) {
         return this.adresseReseau().octet1 == ipPackage.adresseReseau().octet1 && this.adresseReseau().octet2 == ipPackage.adresseReseau().octet2 && this.adresseReseau().octet3 == ipPackage.adresseReseau().octet3;
     }
+        
+        private int octet1;
+        private int octet2;
+        private int octet3;
+        private int octet4;
 }
+
+
+
 
 
 
